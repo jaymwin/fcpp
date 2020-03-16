@@ -87,6 +87,9 @@ Using fcpp (for Kobo banding photos)
 
 3. Now import these renamed images to the research drive (this will only copy in new images to): 
 
-`import_kobo_photos(kobo_kestrel_data = '/Users/Jay/Desktop/kobo', directory_to_drive = 'Z:/HeathLab/American Kestrel projects/Full_Cycle_Phenology/Banding Photos/')`
+`import_kobo_photos(
+kobo_kestrel_data = '/Users/Jay/Desktop/kobo', 
+directory_to_drive = 'Z:/HeathLab/American Kestrel projects/Full_Cycle_Phenology/Banding Photos/'
+)`
 
 4. Delete whatever is left on your desktop or wherever you saved the Kobo data.
