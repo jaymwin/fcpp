@@ -4,11 +4,9 @@
 fcpp
 =============
 
-This package contains functions for repeatedly downloading SD card
-images (from trail cameras inside American kestrel nest boxes),
-determining which photos are actually new to the research drive, copying
-new photos into the drive, and renaming them by nest box ID and datetime
-for the Full Cycle Phenology Project.
+This package contains functions for the Full Cycle Phenology Project. So far, functions are used for 1) repeatedly downloading SD card
+images (from trail cameras inside American kestrel nest boxes), determining which photos are actually new to the research drive, copying
+new photos into the drive, and renaming them by nest box ID and datetime; and 2) renaming banding photos from Kobo data form and importing them to the research drive.
 
 Installing fcpp
 ------------------------
@@ -19,11 +17,11 @@ After that, it’s simple to install and load the fcpp package.
     # If devtools package is not installed
     install.packages("devtools", dependencies = TRUE)
 
-    # Now install and load nestboxphotos
+    # Now install and load fcpp
     devtools::install_github("jaymwin/fcpp")
     library(fcpp)
 
-Using fcpp
+Using fcpp (for nest box photos)
 -------------------
 
 1. Add SD card images to the research drive with the proper folder hierarchy
@@ -77,3 +75,18 @@ plot_photo_timeline(directory_to_drive, renamed_photo_location, ggplot_location)
 ``` r
 delete_redundant_photos(directory_to_drive, photos_to_upload)
 ```
+
+Using fcpp (for Kobo banding photos)
+-------------------
+
+1. Go to Kobo website and 1) download most recent xlsx file for the banding data, and 2) zip folder of banding images. Save them together in a temporary folder (desktop is fine).
+
+2. Load 'fcpp' package, and rename all of the photos you just downloaded (something like this): 
+
+`rename_kobo_photos(kobo_kestrel_data = '/Users/Jay/Desktop/kobo')`
+
+3. Now import these renamed images to the research drive (this will only copy in new images to): 
+
+`import_kobo_photos(kobo_kestrel_data = '/Users/Jay/Desktop/kobo', directory_to_drive = 'Z:/HeathLab/American Kestrel projects/Full_Cycle_Phenology/Banding Photos/')`
+
+4. Delete whatever is left on your desktop or wherever you saved the Kobo data.
