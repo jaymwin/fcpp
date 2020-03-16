@@ -1,0 +1,27 @@
+Package: fcpp
+Title: Manage kestrel banding and nest box photos for the Full Cycle Phenology Project
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Jay",
+           family = "Winiarski",
+           role = c("aut", "cre"),
+           email = "jmwiniarski@gmail.com")
+Description: Rename photos from nest box trail cameras and Kobo banding form and prepare for import to the FCPP research drive.
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    dplyr,
+    furrr,
+    purrr,
+    lubridate,
+    future,
+    fs,
+    here,
+    stringr,
+    ggplot2,
+    exifr,
+    scales,
+    readxl,
+    tidyr
+RoxygenNote: 7.0.0
